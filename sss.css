@@ -1,0 +1,14 @@
+*{
+    --texat-color: blue;
+    --maian-font-family: sans-serif;
+    --bacakground-red: red;
+}
+p{
+    color: var(--text-color);
+    font-family: var(--main-font-family);
+}
+h1{
+    background-color: var(--background-red);
+}
+
+
