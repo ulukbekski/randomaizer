@@ -50,7 +50,7 @@ li:before {
   
   /* subtle zoom to attention and then back */
   .pop-outin {
-	animation: 2s anim-popoutin ease 2;
+	animation: 2s anim-popoutin ease infinite;
 	margin: 0 auto;
   }
   
