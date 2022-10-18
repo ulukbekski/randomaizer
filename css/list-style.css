@@ -1,0 +1,83 @@
+ol {
+	list-style-type: none;
+	counter-reset: li;
+}
+#MyList li {
+	font-size: 30px;
+	cursor: pointer;
+	width: fit-content;
+}
+
+li:before {
+	counter-increment: li;
+	content: counter(li, decimal-leading-zero);
+	color: #2366ae;
+	margin-right: 0.5em;
+}
+
+.line-through {
+	position: relative;
+  }
+  
+  .line-through.example-1::after {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 5px;
+	left: 0;
+	top: calc(50% - 8px/2);
+	background-color: red;
+	transition: 300ms ease-in-out;
+	pointer-events: none;
+  }
+  
+  .line-through.example-1:hover::after {
+	width: 100%;
+}
+  
+  .line {
+	display: inline-block;
+	text-align: center;
+	padding-top: 20px;
+	margin-top: 20px;
+	width: 30%;
+	height: 3rem;
+	overflow: hidden;
+	border: 1px solid black;
+	
+	
+  }
+  
+  /* subtle zoom to attention and then back */
+  .pop-outin {
+	animation: 2s anim-popoutin ease 2;
+	margin: 0 auto;
+  }
+  
+  @keyframes anim-popoutin {
+	0% {
+	  color: black;
+	  transform: scale(0);
+	  opacity: 0;
+	  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	}
+	25% {
+	  color: red;
+	  transform: scale(2);
+	  opacity: 1;
+	  text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+	}
+	50% {
+	  color: black;
+	  transform: scale(1);
+	  opacity: 1;
+	  text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+	}
+	100% {
+	  /* animate nothing to add pause at the end of animation */
+	  transform: scale(1);
+	  opacity: 1;
+	  text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+	}
+  }
+ 
