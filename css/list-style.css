@@ -27,7 +27,7 @@ li:before {
 	left: 0;
 	top: calc(50% - 8px/2);
 	background-color: red;
-	transition: 300ms ease-in-out;
+	transition: 300ms ease-in-out ;
 	pointer-events: none;
   }
   
@@ -50,7 +50,6 @@ li:before {
   
   /* subtle zoom to attention and then back */
   .pop-outin {
-	animation: 2s anim-popoutin ease infinite;
 	margin: 0 auto;
   }
   
