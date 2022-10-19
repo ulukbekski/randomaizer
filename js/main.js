@@ -11,10 +11,14 @@ function giveRandom() {
         if (element.getAttribute('aria-disabled') === 'false' ||
          element.getAttribute('aria-disabled') === null) {
         actives.push(element)
+        }
     }
-    }
-   document.querySelector('#giveRandomResult').innerHTML = 
-   actives[Math.floor(actives.length * Math.random()) ].innerText;  
+    let result = document.querySelector('#giveRandomResult')
+    result.innerHTML = actives[Math.floor(actives.length * Math.random()) ].innerText; 
+    result.style.animation = "2s anim-popoutin ease 1";
+    setTimeout(function(){ 
+      result.style.animation = ""
+    }, 1000) 
 }
 
 function giveRandom2() {
@@ -24,17 +28,22 @@ function giveRandom2() {
         if (element.getAttribute('aria-disabled') === 'false' ||
          element.getAttribute('aria-disabled') === null) {
         actives.push(element)
-    }
+        }
     }
     let first =  actives[Math.floor(actives.length * Math.random()) ].innerText
     let second = actives[Math.floor(actives.length * Math.random()) ].innerText
-
-    while(first === second){
-        second = actives[Math.floor(actives.length * Math.random()) ].innerText
+    if (actives.length > 1) {
+        while(first === second){
+            second = actives[Math.floor(actives.length * Math.random()) ].innerText
+        }
     }
-   document.querySelector('#giveRandom2Result').innerHTML = first + ' ' + second;
+   let result = document.querySelector('#giveRandom2Result');
+   result.innerHTML = first + ' ' + second;
+   result.style.animation = "2s anim-popoutin ease 1";
    
-    
+   setTimeout(function(){ 
+     result.style.animation = ""
+   }, 1000)
 }
 
 
